@@ -1,0 +1,101 @@
+# Reading pref.tcl
+# do Test_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying E:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/DELL/Desktop/FPGA/Test {C:/Users/DELL/Desktop/FPGA/Test/Test.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:53:59 on Dec 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/DELL/Desktop/FPGA/Test" C:/Users/DELL/Desktop/FPGA/Test/Test.v 
+# -- Compiling module Test
+# 
+# Top level modules:
+# 	Test
+# End time: 17:54:00 on Dec 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/DELL/Desktop/FPGA/Test {C:/Users/DELL/Desktop/FPGA/Test/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:54:00 on Dec 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/DELL/Desktop/FPGA/Test" C:/Users/DELL/Desktop/FPGA/Test/alu.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 17:54:00 on Dec 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/DELL/Desktop/FPGA/Test {C:/Users/DELL/Desktop/FPGA/Test/arithmetic_part.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:54:00 on Dec 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/DELL/Desktop/FPGA/Test" C:/Users/DELL/Desktop/FPGA/Test/arithmetic_part.v 
+# -- Compiling module arithmetic_part
+# 
+# Top level modules:
+# 	arithmetic_part
+# End time: 17:54:00 on Dec 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/DELL/Desktop/FPGA/Test {C:/Users/DELL/Desktop/FPGA/Test/b_input_logic.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:54:00 on Dec 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/DELL/Desktop/FPGA/Test" C:/Users/DELL/Desktop/FPGA/Test/b_input_logic.v 
+# -- Compiling module B_input_logic
+# 
+# Top level modules:
+# 	B_input_logic
+# End time: 17:54:00 on Dec 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/DELL/Desktop/FPGA/Test {C:/Users/DELL/Desktop/FPGA/Test/full_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:54:00 on Dec 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/DELL/Desktop/FPGA/Test" C:/Users/DELL/Desktop/FPGA/Test/full_adder.v 
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# End time: 17:54:00 on Dec 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/DELL/Desktop/FPGA/Test {C:/Users/DELL/Desktop/FPGA/Test/logic_part.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:54:00 on Dec 27,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/DELL/Desktop/FPGA/Test" C:/Users/DELL/Desktop/FPGA/Test/logic_part.v 
+# -- Compiling module logic_part
+# 
+# Top level modules:
+# 	logic_part
+# End time: 17:54:00 on Dec 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript work.Test
+# vsim -gui -l msim_transcript work.Test 
+# Start time: 17:54:07 on Dec 27,2020
+# Loading work.Test
+# Loading work.ALU
+# Loading work.arithmetic_part
+# Loading work.B_input_logic
+# Loading work.full_adder
+# Loading work.logic_part
+run -all
+# i=          0,a=0111,b=0010,S=000,Ci=0,G=0111,Co=0
+# i=          1,a=0111,b=0010,S=000,Ci=1,G=1000,Co=0
+# i=          2,a=0111,b=0010,S=001,Ci=0,G=1001,Co=0
+# i=          3,a=0111,b=0010,S=001,Ci=1,G=1010,Co=0
+# i=          4,a=0111,b=0010,S=010,Ci=0,G=0100,Co=1
+# i=          5,a=0111,b=0010,S=010,Ci=1,G=0101,Co=1
+# i=          6,a=0111,b=0010,S=011,Ci=0,G=0110,Co=1
+# i=          7,a=0111,b=0010,S=011,Ci=1,G=0111,Co=1
+# i=          8,a=0111,b=0010,S=100,Ci=0,G=0010,Co=0
+# i=          9,a=0111,b=0010,S=100,Ci=1,G=0010,Co=0
+# i=         10,a=0111,b=0010,S=101,Ci=0,G=0111,Co=0
+# i=         11,a=0111,b=0010,S=101,Ci=1,G=0111,Co=0
+# i=         12,a=0111,b=0010,S=110,Ci=0,G=0101,Co=0
+# i=         13,a=0111,b=0010,S=110,Ci=1,G=0101,Co=0
+# i=         14,a=0111,b=0010,S=111,Ci=0,G=1000,Co=0
+# i=         15,a=0111,b=0010,S=111,Ci=1,G=1000,Co=0
+# End time: 17:54:59 on Dec 27,2020, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 0

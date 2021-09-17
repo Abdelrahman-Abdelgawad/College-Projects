@@ -1,0 +1,8 @@
+module Test(F,A,B);
+
+output F;
+input  A,B;
+
+assign F = A | B;
+
+endmodule

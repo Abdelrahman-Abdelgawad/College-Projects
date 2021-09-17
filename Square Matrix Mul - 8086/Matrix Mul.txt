@@ -1,0 +1,76 @@
+org 200h   
+
+    MOV [0300H],1
+    MOV [0301H],2
+    MOV [0302H],3
+    MOV [0303H],4
+    MOV [0304H],5
+    MOV [0305H],6
+    MOV [0306H],7
+    MOV [0307H],8 
+    MOV [0308H],9
+    
+    MOV [0309H],9
+    MOV [030AH],8
+    MOV [030BH],7
+    MOV [030CH],6
+    MOV [030DH],5
+    MOV [030EH],4
+    MOV [030FH],3
+    MOV [0310H],2 
+    MOV [0311H],1
+
+    ;MAIN PROGRAM
+    
+    MOV CX,3                                             
+    MOV BP,0300H
+    MOV BX,0309H
+    MOV SI,030FH
+    CALL AA
+    MOV BP,0300H
+    MOV BX,030AH
+    SUB SI,8
+    CALL AA 
+    MOV BP,0300H
+    MOV BX,030BH
+    SUB SI,8
+    CALL AA
+    
+    HLT    
+
+;----------------------------------------------------    
+    
+AA PROC
+       MOV CH,3
+L2:    ADD SI,3
+       CALL AB
+       
+       ;INC BP
+       SUB BX,3
+       DEC CH
+       JNZ L2  
+       ;CALL AB
+       ;MOV [SI],AL
+       RET
+    
+AA ENDP                                             
+
+;----------------------------------------------------   
+
+AB PROC 
+      
+       MOV CL,3
+       MOV DX,0
+L1:    MOV AL,[BP]
+       MUL [BX]
+       ADD DX,AX
+       INC BP
+       ADD BX,3
+       DEC CL
+       JNZ L1 
+       SUB BX,6
+       MOV AX,DX
+       MOV [SI],AL
+       RET 
+     
+AB ENDP
